@@ -27,6 +27,11 @@ exports.run = (io,Game) => {
             console.log("token!");
         });
 
+        socket.on('monsterStatus',(monsterStatus)=>{
+            console.log(monsterStatus);
+            socket.broadcast.emit('monsterStatus',monsterStatus);
+        });
+
         socket.on('disconnect', ()=>{
             console.log('Disconnect: ',socket.client.conn.remoteAddress);
         });
