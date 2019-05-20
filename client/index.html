@@ -6,10 +6,18 @@
     <title>TowerDefenseClient</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="console.css">
     <script src="jquery-3.3.1.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
+    <div id="screen">
+        <div id="console">
+                <div id="console-output" class="console-output"></div>
+                <input id=console-input></input>
+        </div>
+        <div id="monsterUpdateConsole"></div>
+    </div>
     <div class="container">
         <span class="title"><h1>Tokens:&nbsp;</h1><h1 id="tokens"></h1></span>
         <button id="getToken" class="getToken">Get Token!</button>

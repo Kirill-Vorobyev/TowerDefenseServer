@@ -28,6 +28,7 @@ buttonClicked = (e, monster) => {
 }
 
 bindSocketEvents = (shopUL,tokens) => {
+    var monsterUpdateConsole = $("#monsterUpdateConsole");
     socket.on('startingInfo',(book,hero)=>{
         console.log("book:",book);
         console.log("hero:",hero);
@@ -48,6 +49,14 @@ bindSocketEvents = (shopUL,tokens) => {
     });
 
     socket.on('monsterStatus',(monsterStatus)=>{
+        monsterUpdateConsole.empty();
+        for(var monster of monsterStatus.monsters){
+            var monsterName = monster.name;
+            var monsterCurrentHp = monster.hp;
+            var textInLine = monsterName + " : " + monsterCurrentHp + "/" + bookOfMonsters[monsterName].hp;
+            var newLine = $('<pre/>').text(textInLine);
+            monsterUpdateConsole.append(newLine);
+        }
         console.log(monsterStatus);
     });
 }
