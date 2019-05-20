@@ -46,6 +46,10 @@ bindSocketEvents = (shopUL,tokens) => {
     socket.on('tokens', (tokenCount)=>{
         tokens.text(tokenCount);
     });
+
+    socket.on('monsterStatus',(monsterStatus)=>{
+        console.log(monsterStatus);
+    });
 }
 
 requestStartingInfo = () => {
