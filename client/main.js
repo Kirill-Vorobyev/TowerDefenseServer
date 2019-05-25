@@ -2,6 +2,7 @@ let socket;
 let transactionID = 0;
 const bookOfMonsters = {};
 const transactions = {};
+
 //adds unique transaction to the local list
 createTransaction = (monsterName) => {
     const currentTransactionID = transactionID;
@@ -89,10 +90,8 @@ buildShop = (shopUL,tokens) => {
             id: monster+'-stats-span',
             class: 'monsterStats'
         }).text(statsString).appendTo(li);
-        
     }
 }
-
 
 main = () => {
     //set up socket
@@ -103,6 +102,7 @@ main = () => {
     //bind click event
     $("#getToken").click((e)=>{socket.emit('getToken');});
     bindSocketEvents(shopUL,tokens);
+    bindConsoleInputEvent();
     requestStartingInfo();
 }
 
