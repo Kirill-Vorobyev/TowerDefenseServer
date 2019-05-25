@@ -14,15 +14,17 @@
     <div id="screen">
         <div id="console">
                 <div id="console-output" class="console-output"></div>
-                <input id=console-input></input>
+                <input id="console-input" class="console-input"></input>
         </div>
-        <div id="monsterUpdateConsole"></div>
+        <div id="screen-right">
+            <div id="monsterUpdateConsole"></div>
+            <div class="container">
+                <span class="title"><h1>Tokens:&nbsp;</h1><h1 id="tokens"></h1></span>
+                <button id="getToken" class="getToken">Get Token!</button>
+                <ul id="shop"></ul>
+            </div>
+        </div>
     </div>
-    <div class="container">
-        <span class="title"><h1>Tokens:&nbsp;</h1><h1 id="tokens"></h1></span>
-        <button id="getToken" class="getToken">Get Token!</button>
-        <ul id="shop"></ul>
-        <script src="main.js"></script>
-    </div>
+    <script src="main.js"></script>
 </body>
 </html>
